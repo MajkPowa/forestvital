@@ -1,0 +1,12 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-26",
+  "asset": "dist/assets/forest-hero.webp",
+  "master": "dist/assets/forest-hero.png",
+  "references": [
+    "Queen Bee supplied photograph",
+    "Synbiotika supplied photograph",
+    "Paměť supplied photograph"
+  ],
+  "prompt": "Use case: product-mockup / compositing. Asset type: premium Czech Forest Vital ecommerce hero photograph, square 1536x1536 composition, no UI or slogans. Input images: Image 1 is exact QUEEN BEE packaging; image 2 exact SYNBIOTIKA packaging; image 3 exact PAMĚŤ packaging. Primary request: create a photoreal editorial group photograph of exactly THREE actual products: Queen Bee (gold floral label with bee), Synbiotika (turquoise lavender iridescent label with white gut outline), Paměť (deep blue label with head outline). Preserve original amber brown bottle shapes, black ribbed screw caps, label colors, recognizable graphics, and Czech names QUEEN BEE, SYNBIOTIKA, PAMĚŤ. Queen Bee centered slightly forward, Paměť to left slightly behind and Synbiotika to right. Full packages visible and front labels facing camera. Products occupy about64%of width and68%of height within central safe zone; no clipping. Scene: calm woodland still life, mossy pale limestone ledge, small fern fronds around edges, warm early morning shaft of light through blurred forest, muted olive and deep green background with amber highlights. Natural and tactile refined editorial luxury. Soft realistic shadows, rich soft contrast, authentic glass reflections. Camera slightly low level,65mm commercial still-life photography, sharp labels and soft forest background. No generic white supplement jars, no other products, no extra labels/logos, no watermark, no people, no text outside packaging, no fake pills, no fantasy effects."
+}
