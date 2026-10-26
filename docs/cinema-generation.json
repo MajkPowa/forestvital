@@ -1,0 +1,31 @@
+{
+  "provider": "Higgsfield",
+  "model": "seedance_2_5",
+  "job_id": "defafd22-df6f-4dc6-b491-e4d08275842e",
+  "quoted_credits": 96,
+  "duration_seconds": 6,
+  "resolution": "1920x1080",
+  "audio": false,
+  "reference": "https://majkpowa.github.io/forestvital/assets/forest-hero.webp",
+  "prompt": "Create an original cinematic visual for a Czech botanical ecommerce website. The reference image shows three exact actual supplement bottles: PAMĚŤ (blue head-outline label), QUEEN BEE (gold label with bee and flowers), SYNBIOTIKA (turquoise/lavender gut-outline label). Preserve their amber glass, black ribbed caps, package shapes, existing label graphics and exact product names. Do not redesign the packaging. Produce one continuous 6-second 16:9 1080p cinematic shot, silent, no cuts and no text outside the labels. Start near a moss-covered limestone edge with a foreground fern softly framing the lower edge; the three bottles already exist in the shot. Move the camera with a very slow controlled dolly and subtle rise, progressing from a slightly wider woodland still life to a settled closer three-product composition. Warm sunlight filters through soft dark olive woodland, very faint atmospheric haze, tactile moss, natural reflections, shallow depth of field. Keep bottles clustered on the RIGHT 55 percent of the frame and the LEFT 40 percent a calm dark softly focused forest negative space for live website text. Entire caps and bottle bases must remain visible, labels face camera with almost no rotation, bottles never deform, multiply, float, dissolve, or swap identity. A refined commercial film with slow intentional optical movement, not rapid animation. Final second is nearly still so it can hold as a scroll-controlled last frame. No people, no hands, no pills, no audio, no claims, no logos or words other than existing package labels.",
+  "master": "source-assets/cinema/forest-film.mp4",
+  "source": {
+    "fps": 24,
+    "frames": 145,
+    "duration_seconds": 6.041667
+  },
+  "web_sequence": {
+    "frames": 150,
+    "fps": 25,
+    "desktop": "1280x720 WebP",
+    "mobile": "768x432 WebP",
+    "bounded_decoded_cache": {
+      "desktop": 34,
+      "mobile": 22
+    },
+    "concurrent_loads": 4,
+    "status": "Retired before release after the user clarified the non-scrolling OnePage product experience. The film is now optional in a native dialog."
+  },
+  "packaging": "Paměť, Queen Bee, Synbiotika: actual supplied packages. AI-generated scene, not documentary footage.",
+  "web_video": "dist/assets/cinema/forest-film-web.mp4"
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "id": "pamet",
+    "background": "#243e56",
+    "ink": "#f7f5ed",
+    "inkRatio": 10.13,
+    "muted": "#d2dbdc",
+    "mutedRatio": 7.85,
+    "action": "#e2c38c",
+    "actionInk": "#273e4d",
+    "actionRatio": 6.6
+  },
+  {
+    "id": "chlap",
+    "background": "#623a32",
+    "ink": "#fff9ee",
+    "inkRatio": 9.23,
+    "muted": "#e8d8c7",
+    "mutedRatio": 6.95,
+    "action": "#efd9ae",
+    "actionInk": "#4c3027",
+    "actionRatio": 8.64
+  },
+  {
+    "id": "cbd",
+    "background": "#254a3c",
+    "ink": "#f8f4e8",
+    "inkRatio": 8.99,
+    "muted": "#d0ddd2",
+    "mutedRatio": 7.04,
+    "action": "#cfdf9a",
+    "actionInk": "#263d30",
+    "actionRatio": 8.19
+  },
+  {
+    "id": "synbiotika",
+    "background": "#b8d4cd",
+    "ink": "#17372d",
+    "inkRatio": 8.23,
+    "muted": "#3d5e52",
+    "mutedRatio": 4.57,
+    "action": "#244d40",
+    "actionInk": "#f8f5e9",
+    "actionRatio": 8.7
+  },
+  {
+    "id": "oci",
+    "background": "#5f9f98",
+    "ink": "#102d26",
+    "inkRatio": 4.84,
+    "muted": "#102d26",
+    "mutedRatio": 4.84,
+    "action": "#153f36",
+    "actionInk": "#f8f5e9",
+    "actionRatio": 10.71
+  },
+  {
+    "id": "queen-bee",
+    "background": "#d4be85",
+    "ink": "#263b2d",
+    "inkRatio": 6.59,
+    "muted": "#3d4d37",
+    "mutedRatio": 4.97,
+    "action": "#314c36",
+    "actionInk": "#f8f5e9",
+    "actionRatio": 8.67
+  }
+]

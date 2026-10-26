@@ -22,6 +22,7 @@ const symbols={
   plus:'<path d="M5 12h14m-7-7v14"/>',
   minus:'<path d="M5 12h14"/>',
   check:'<path d="m5 12 4.5 4.5L19 7"/>',
+  film:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="m10 8 6 4-6 4Z M7 4v16m10-16v16"/>',
   leaf:'<path d="M5 19C-1 6 11 1 21 3c1.5 10-4 21-16 16Zm0 0L17 7m-8 8-1-6m5 2 6 1"/>'
 };
 const icon=name=>`<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">${symbols[name]||symbols.leaf}</svg>`;
@@ -65,8 +66,37 @@ function renderProducts(){
   $$('[data-category]').forEach(button=>{const active=button.dataset.category===category;button.classList.toggle('selected',active);button.setAttribute('aria-pressed',String(active));});updateCounters();
 }
 function resetFilters(){category='all';query='';$('#catalog-search').value='';$('#catalog-sort').value='collection';renderProducts();}
-function openDialog(id){const dialog=document.getElementById(id),previous=$('dialog[open]');if(previous===dialog)return;dialog._opener=document.activeElement;dialog.dataset.returnTo=id==='product-dialog'&&previous?previous.id:'';$$('dialog[open]').forEach(open=>open.close());dialog.showModal();dialog.scrollTop=0;}
-function closeDialog(control){const dialog=control.closest('dialog');if(!dialog)return;const returnTo=dialog.dataset.returnTo;dialog.close();if(returnTo){openDialog(returnTo);}else if(dialog._opener?.isConnected){dialog._opener.focus({preventScroll:true});}}
+function openDialog(id){
+  const dialog=document.getElementById(id),previous=$('dialog[open]');
+  if(!dialog||previous===dialog)return;
+  // Returning to an existing ancestor shortens the stack instead of making a cycle.
+  let ancestor=previous?._returnDialog;
+  while(ancestor){
+    if(ancestor===dialog){
+      let child=previous;
+      while(child!==dialog){const parent=child._returnDialog;child._returnDialog=null;child.close();child=parent;}
+      dialog.showModal();return;
+    }
+    ancestor=ancestor._returnDialog;
+  }
+  dialog._opener=document.activeElement;
+  dialog._returnDialog=previous||null;
+  if(previous)previous.close();
+  dialog.showModal();dialog.scrollTop=0;
+}
+function closeDialog(control){
+  const dialog=control.closest('dialog');if(!dialog)return;
+  const parent=dialog._returnDialog,opener=dialog._opener;
+  dialog._returnDialog=null;dialog.close();
+  if(parent){parent.showModal();if(opener?.isConnected&&parent.contains(opener))opener.focus({preventScroll:true});}
+  else if(opener?.isConnected&&opener.getClientRects().length)opener.focus({preventScroll:true});
+  else $('#showroom-root').focus({preventScroll:true});
+}
+function dismissDialogs(){
+  let dialog=$('dialog[open]');
+  while(dialog){const parent=dialog._returnDialog;dialog._returnDialog=null;dialog.close();dialog=parent;}
+  $('#showroom-root').focus({preventScroll:true});
+}
 function qtyControl(actionPrefix,quantity,id=''){return `<div class="qty" role="group" aria-label="Počet kusů"><button data-action="${actionPrefix}-minus" data-id="${id}" aria-label="Snížit počet kusů" ${quantity<=1&&actionPrefix==='detail'?'disabled':''}>${icon('minus')}</button><span class="${actionPrefix==='detail'?'detail-qty':''}" aria-live="polite">${quantity}</span><button data-action="${actionPrefix}-plus" data-id="${id}" aria-label="Zvýšit počet kusů" ${quantity>=99?'disabled':''}>${icon('plus')}</button></div>`;}
 function openProduct(id){
   const product=productById(id);if(!product)return;detailId=id;detailQty=1;
@@ -79,6 +109,7 @@ function addToCart(id,quantity=1){
   const product=productById(id);if(!product)return;const item=cart.find(entry=>entry.id===id);if(item)item.qty=Math.min(99,item.qty+quantity);else cart.push({id,qty:Math.max(1,Math.min(99,quantity))});persist();renderCart();toast(`${product.name} je v ukázkovém košíku.`);
 }
 function renderCart(){
+  if(!products.length){$('#cart-content').innerHTML=`<div class="empty">${icon('bag')}<h3>Připravujeme váš výběr.</h3><p>Čekáme na načtení produktů a cen. Pokud se kolekce nenačte, zkuste ji obnovit.</p><button class="button secondary" data-action="retry">Obnovit kolekci ${icon('arrow')}</button></div>`;return;}
   $('#cart-content').innerHTML=cart.length?`<div class="cart-items">${cart.map(item=>{const product=productById(item.id);return `<article class="cart-item"><button class="cart-thumb" data-action="product" data-id="${item.id}" aria-label="Detail ${escapeHtml(product.name)}"><img src="${product.image}" alt=""></button><div><h3>${escapeHtml(product.name)}</h3><small>${escapeHtml(product.package)} · ${currency(product.price)} / balení</small>${qtyControl('cart',item.qty,item.id)}</div><div class="cart-end"><span>${currency(product.price*item.qty)}</span><button data-action="remove" data-id="${item.id}" aria-label="Odebrat ${escapeHtml(product.name)} z košíku">Odebrat</button></div></article>`;}).join('')}</div><div class="cart-summary"><div class="summary-row"><span>Produkty (${countCart()} ks)</span><span>${currency(subtotal())}</span></div><div class="summary-row"><span>Doprava</span><span>V dalším kroku</span></div><div class="summary-row total"><strong>Mezisoučet</strong><strong>${currency(subtotal())}</strong></div><button class="button primary" data-action="checkout">Vyzkoušet objednávku ${icon('arrow')}</button><p class="demo-note">Toto je ukázkový košík. Nevzniká skutečná objednávka, data se neodesílají a nic neplatíte.</p><button class="text-button" data-close>Ještě se porozhlédnout</button></div>`:`<div class="empty">${icon('bag')}<h3>Prostor pro váš výběr.</h3><p>Košík je zatím prázdný.<br>Poznejte naši kolekci šesti produktů.</p><button class="button primary" data-action="continue">Prozkoumat kolekci ${icon('arrow')}</button></div>`;
 }
 function changeCart(id,change,action){const item=cart.find(entry=>entry.id===id);if(!item)return;item.qty=Math.min(99,item.qty+change);if(item.qty<1)cart=cart.filter(entry=>entry.id!==id);persist();renderCart();const target=$(`[data-action="${action}"][data-id="${id}"]`,$('#cart-dialog'));(target&&!target.disabled?target:$('#cart-dialog button[data-action="checkout"]')||$('#cart-dialog button[data-action="continue"]'))?.focus({preventScroll:true});}
@@ -101,27 +132,30 @@ function renderCheckout(){
 function finishCheckout(){
   $('#checkout-content').innerHTML=`<div class="checkout-success">${icon('check')}<p class="eyebrow">UKÁZKA DOKONČENA</p><h3>Takto by vypadal<br>váš další krok.</h3><p>Prošli jste zkušební objednávkou.<br>Žádná objednávka nebyla odeslána.<br>Nic se neplatilo a košík vám zůstává.</p><button class="button primary" data-action="continue">Vrátit se ke kolekci ${icon('arrow')}</button></div>`;checkout={step:1,fields:{},shipping:'courier',payment:'transfer'};$('#checkout-dialog').scrollTop=0;const confirmation=$('.checkout-success h3');confirmation.tabIndex=-1;confirmation.focus({preventScroll:true});
 }
-function focusSearch(){category='all';renderProducts();$('#kolekce').scrollIntoView({behavior:scrollMode});$('#catalog-search').focus({preventScroll:true});}
+function focusSearch(){category='all';renderProducts();openDialog('catalog-dialog');$('#catalog-search').focus({preventScroll:true});}
 document.addEventListener('click',event=>{
   const control=event.target.closest('button,a');if(!control)return;
   if(control.hasAttribute('data-close')){closeDialog(control);return;}
   if(control.dataset.category){category=control.dataset.category;renderProducts();return;}
   const action=control.dataset.action,id=control.dataset.id;
   switch(action){
+    case'catalog':resetFilters();openDialog('catalog-dialog');break;
+    case'about':openDialog('about-dialog');break;
+    case'film':openDialog('film-dialog');if(!matchMedia('(prefers-reduced-motion:reduce)').matches)$('#forest-video').play().catch(()=>{});break;
     case'search':focusSearch();break;
-    case'saved':category='saved';query='';$('#catalog-search').value='';renderProducts();$('#kolekce').scrollIntoView({behavior:scrollMode});break;
+    case'saved':category='saved';query='';$('#catalog-search').value='';renderProducts();openDialog('catalog-dialog');break;
     case'reset':resetFilters();break;
     case'save':setSaved(id);break;
     case'product':openProduct(id);break;
     case'add':addToCart(id);break;
     case'detail-minus':setDetailQuantity(-1);break;
     case'detail-plus':setDetailQuantity(1);break;
-    case'detail-add':addToCart(detailId,detailQty);$('#product-dialog').close();openDialog('cart-dialog');break;
+    case'detail-add':addToCart(detailId,detailQty);openDialog('cart-dialog');break;
     case'cart':renderCart();openDialog('cart-dialog');break;
     case'cart-minus':changeCart(id,-1,action);break;
     case'cart-plus':changeCart(id,1,action);break;
     case'remove':{const item=cart.find(entry=>entry.id===id);if(item)changeCart(id,-item.qty,'cart-minus');break;}
-    case'continue':$$('dialog[open]').forEach(dialog=>dialog.close());$('#kolekce').scrollIntoView({behavior:scrollMode});break;
+    case'continue':dismissDialogs();break;
     case'checkout':if(cart.length){checkout.step=1;renderCheckout();openDialog('checkout-dialog');focusCheckout();}break;
     case'checkout-back':checkout.step=Math.max(1,checkout.step-1);renderCheckout();break;
     case'checkout-next':checkout.shipping=$('input[name="shipping"]:checked').value;checkout.payment=$('input[name="payment"]:checked').value;checkout.step=3;renderCheckout();break;
@@ -142,10 +176,12 @@ document.addEventListener('submit',event=>{
 $('#catalog-search').addEventListener('input',event=>{query=event.target.value.trim();renderProducts();});
 $('#catalog-sort').addEventListener('change',renderProducts);
 $$('dialog').forEach(dialog=>{dialog.addEventListener('cancel',event=>{event.preventDefault();closeDialog(dialog);});dialog.addEventListener('click',event=>{if(event.target===dialog){const rect=dialog.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)closeDialog(dialog);}});});
+$('#film-dialog').addEventListener('close',()=>$('#forest-video').pause());
+document.addEventListener('visibilitychange',()=>{if(document.hidden)$('#forest-video').pause();});
 async function init(){
   hydrate();
-  try{const response=await fetch('products.json?v=1.0.0');if(!response.ok)throw new Error('Unavailable catalog');products=await response.json();saved=[...new Set(saved.filter(id=>productById(id)))];cart=cart.filter(item=>productById(item.id)&&Number.isFinite(item.qty)&&item.qty>0).map(item=>({id:item.id,qty:Math.min(99,Math.floor(item.qty))}));persist();renderProducts();renderCart();}
-  catch{$('#product-grid').innerHTML=`<div class="empty">${icon('info')}<h3>Kolekce se nepodařila načíst.</h3><p>Zkontrolujte připojení a obnovte stránku.</p><button class="button secondary" data-action="retry">Zkusit znovu ${icon('arrow')}</button></div>`;$('#result-count').textContent='Kolekce není dostupná';}
+  try{const response=await fetch('products.json?v=1.1.0');if(!response.ok)throw new Error('Unavailable catalog');products=await response.json();saved=[...new Set(saved.filter(id=>productById(id)))];cart=cart.filter(item=>productById(item.id)&&Number.isFinite(item.qty)&&item.qty>0).map(item=>({id:item.id,qty:Math.min(99,Math.floor(item.qty))}));persist();renderProducts();renderCart();document.dispatchEvent(new CustomEvent('forest:catalog-ready'));}
+  catch{document.dispatchEvent(new CustomEvent('forest:catalog-error'));$('#product-grid').innerHTML=`<div class="empty">${icon('info')}<h3>Kolekce se nepodařila načíst.</h3><p>Zkontrolujte připojení a obnovte stránku.</p><button class="button secondary" data-action="retry">Zkusit znovu ${icon('arrow')}</button></div>`;$('#result-count').textContent='Kolekce není dostupná';}
 }
 document.addEventListener('click',event=>{if(event.target.closest('[data-action="retry"]'))init();});
 init();

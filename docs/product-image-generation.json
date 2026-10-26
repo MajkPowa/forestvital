@@ -1,0 +1,57 @@
+{
+  "provider": "Higgsfield",
+  "model": "gpt_image_2_5",
+  "variant": "flare",
+  "quality": "high",
+  "resolution": "2k",
+  "background": "transparent",
+  "aspect_ratio": "4:5",
+  "quoted_credits_per_image": 2.75,
+  "quoted_credits_total": 16.5,
+  "source": "Six original user-supplied product package photographs. Package artwork is preserved, not replaced by retailer branding.",
+  "outputs": [
+    {
+      "product_id": "pamet",
+      "job_id": "0f12bb31-20bc-418d-bd9d-6252bfe0b372",
+      "asset": "dist/assets/showroom/pamet.webp",
+      "prompt": "Create a premium photorealistic product packshot from this exact supplied supplement bottle. Preserve the physical package identity and proportions, amber glass bottle, black ribbed screw cap, blue label with copper borders and exact white head/brain-outline graphic; exact large Czech product name PAMĚŤ and existing supporting text. Retain the label layout and colors; do not invent or redesign the label. Improve photographic clarity, crisp edges, tactile material and clean controlled commercial studio lighting with soft highlights from upper left and a delicate warm rim reflection. One single upright bottle, frontal with a very subtle three-quarter perspective of at most 4 degrees, 85mm lens appearance, cap and entire base fully visible. The bottle occupies 84 percent of image height, centered with generous clear space around all sides. No props, no pedestal, no scenery, no floor, no other bottles, no duplicate labels, no added text. A real transparent alpha background, not a white or checkerboard background. No large cast shadow baked into the asset; the web scene will supply its own ground shadow. Output a polished ecommerce hero cutout faithfully based on this real package, not a fictional generic supplement.",
+      "master": "source-assets/higgsfield-products/pamet.png"
+    },
+    {
+      "product_id": "chlap",
+      "job_id": "81083ae5-db05-46c1-a710-9ca7964a50f6",
+      "asset": "dist/assets/showroom/chlap.webp",
+      "prompt": "Create a premium photorealistic product packshot from this exact supplied supplement bottle. Preserve the physical package identity and proportions, amber glass bottle, black ribbed screw cap, deep red label with gold borders, gold bearded man emblem; exact large Czech product name CHLAP and supporting line PRO MUŽE K CESTĚ NA VRCHOL. Retain the label layout and colors; do not invent or redesign the label. Improve photographic clarity, crisp edges, tactile material and clean controlled commercial studio lighting with soft highlights from upper left and a delicate warm rim reflection. One single upright bottle, frontal with a very subtle three-quarter perspective of at most 4 degrees, 85mm lens appearance, cap and entire base fully visible. The bottle occupies 84 percent of image height, centered with generous clear space around all sides. No props, no pedestal, no scenery, no floor, no other bottles, no duplicate labels, no added text. A real transparent alpha background, not a white or checkerboard background. No large cast shadow baked into the asset; the web scene will supply its own ground shadow. Output a polished ecommerce hero cutout faithfully based on this real package, not a fictional generic supplement.",
+      "master": "source-assets/higgsfield-products/chlap.png"
+    },
+    {
+      "product_id": "cbd",
+      "job_id": "d9862a11-2494-4d00-b3ed-6da7be582323",
+      "asset": "dist/assets/showroom/cbd.webp",
+      "prompt": "Create a premium photorealistic product packshot from this exact supplied supplement bottle. Preserve the physical package identity and proportions, amber glass bottle, black ribbed screw cap, green upper label with a gold cannabis leaf, magenta lower strip and gold borders; exact large name CBD and lower line CBG CBC MCT with existing supporting text. Retain the label layout and colors; do not invent or redesign the label. Improve photographic clarity, crisp edges, tactile material and clean controlled commercial studio lighting with soft highlights from upper left and a delicate warm rim reflection. One single upright bottle, frontal with a very subtle three-quarter perspective of at most 4 degrees, 85mm lens appearance, cap and entire base fully visible. The bottle occupies 84 percent of image height, centered with generous clear space around all sides. No props, no pedestal, no scenery, no floor, no other bottles, no duplicate labels, no added text. A real transparent alpha background, not a white or checkerboard background. No large cast shadow baked into the asset; the web scene will supply its own ground shadow. Output a polished ecommerce hero cutout faithfully based on this real package, not a fictional generic supplement.",
+      "master": "source-assets/higgsfield-products/cbd.png"
+    },
+    {
+      "product_id": "synbiotika",
+      "job_id": "cace7945-5e26-4a77-972f-e416c3f48e04",
+      "asset": "dist/assets/showroom/synbiotika.webp",
+      "prompt": "Create a premium photorealistic product packshot from this exact supplied supplement bottle. Preserve the physical package identity and proportions, amber glass bottle, black ribbed screw cap, pastel turquoise-to-lavender label with silver borders and white gut-outline icon; exact Czech product name SYNBIOTIKA and existing supporting line DVOJÍ SÍLA PRO SPOKOJENÉ BŘÍŠKO. Retain the label layout and colors; do not invent or redesign the label. Improve photographic clarity, crisp edges, tactile material and clean controlled commercial studio lighting with soft highlights from upper left and a delicate warm rim reflection. One single upright bottle, frontal with a very subtle three-quarter perspective of at most 4 degrees, 85mm lens appearance, cap and entire base fully visible. The bottle occupies 84 percent of image height, centered with generous clear space around all sides. No props, no pedestal, no scenery, no floor, no other bottles, no duplicate labels, no added text. A real transparent alpha background, not a white or checkerboard background. No large cast shadow baked into the asset; the web scene will supply its own ground shadow. Output a polished ecommerce hero cutout faithfully based on this real package, not a fictional generic supplement.",
+      "master": "source-assets/higgsfield-products/synbiotika.png"
+    },
+    {
+      "product_id": "oci",
+      "job_id": "699c15ea-7e71-4b76-bc9f-9c62aa4be6b2",
+      "asset": "dist/assets/showroom/oci.webp",
+      "prompt": "Create a premium photorealistic product packshot from this exact supplied supplement bottle. Preserve the physical package identity and proportions, amber glass bottle, black ribbed screw cap, turquoise label with gold borders, large illustrated gold/green eye emblem; exact Czech product name OČI and existing supporting text. Retain the label layout and colors; do not invent or redesign the label. Improve photographic clarity, crisp edges, tactile material and clean controlled commercial studio lighting with soft highlights from upper left and a delicate warm rim reflection. One single upright bottle, frontal with a very subtle three-quarter perspective of at most 4 degrees, 85mm lens appearance, cap and entire base fully visible. The bottle occupies 84 percent of image height, centered with generous clear space around all sides. No props, no pedestal, no scenery, no floor, no other bottles, no duplicate labels, no added text. A real transparent alpha background, not a white or checkerboard background. No large cast shadow baked into the asset; the web scene will supply its own ground shadow. Output a polished ecommerce hero cutout faithfully based on this real package, not a fictional generic supplement.",
+      "master": "source-assets/higgsfield-products/oci.png"
+    },
+    {
+      "product_id": "queen-bee",
+      "job_id": "774486a5-dca2-4e1a-a54b-09b1b36adf38",
+      "asset": "dist/assets/showroom/queen-bee.webp",
+      "prompt": "Create a premium photorealistic product packshot from this exact supplied supplement bottle. Preserve the physical package identity and proportions, amber glass bottle, black ribbed screw cap, gold ochre label with black honeycomb borders, bee and floral wreath emblem; exact large name QUEEN BEE and Czech line MATEŘÍ KAŠIČKA, lower line REISHI * CORDYCEPS * CHAGA. Retain the label layout and colors; do not invent or redesign the label. Improve photographic clarity, crisp edges, tactile material and clean controlled commercial studio lighting with soft highlights from upper left and a delicate warm rim reflection. One single upright bottle, frontal with a very subtle three-quarter perspective of at most 4 degrees, 85mm lens appearance, cap and entire base fully visible. The bottle occupies 84 percent of image height, centered with generous clear space around all sides. No props, no pedestal, no scenery, no floor, no other bottles, no duplicate labels, no added text. A real transparent alpha background, not a white or checkerboard background. No large cast shadow baked into the asset; the web scene will supply its own ground shadow. Output a polished ecommerce hero cutout faithfully based on this real package, not a fictional generic supplement.",
+      "master": "source-assets/higgsfield-products/queen-bee.png"
+    }
+  ],
+  "encoding": "WebP conversion preserves transparent alpha; no retouching, recoloring or compositing is applied to the generated product assets."
+}
