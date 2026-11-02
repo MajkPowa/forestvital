@@ -6,7 +6,11 @@ Záznam konfigurace z 2. listopadu 2026. Primární adresa je `https://www.fores
 
 V GitHub Pages je nastavená vlastní doména `www.forestvital.cz`. Ve Forpsi byly upraveny DNS záznamy podle tabulky níže. Nameservery `ns.forpsi.cz`, `ns.forpsi.net` a `ns.forpsi.it` zůstaly beze změny; DNSSEC zůstal zapnutý.
 
-Šíření DNS a aktivace certifikátu HTTPS ještě vyžadují živé ověření. V době tohoto záznamu nebylo v GitHub Pages zapnuté vynucování HTTPS (`https_enforced: false`) a certifikát čekal na dokončení. Tento dokument nepotvrzuje platný certifikát ani dokončené přesměrování všech variant adresy.
+Živé ověření dokončeno 2. listopadu 2026 v 19:06 CET: DNS na obou doménách odpovídá konfiguraci a GitHub Pages je označuje za validní. Přísná TLS kontrola bez vypnutí ověřování certifikátu prošla na `forestvital.cz` i `www.forestvital.cz`. Primární HTTPS stránka vrací 200 a HTTPS apex vrací 301 na `https://www.forestvital.cz/`. Veřejný HTTPS katalog obsahuje pět produktů bez Queen Bee.
+
+Certifikát GitHub Pages je ve stavu `approved`, pokrývá oba názvy a má uvedenou expiraci 31. ledna 2027. Bylo zapnuto a zpětně ověřeno `https_enforced: true`. Nově načtený HTTP asset (`/favicon.svg`) již vracel 301 na HTTPS; dříve uložená HTTP odpověď úvodní stránky byla v době kontroly ještě v CDN mezipaměti s životností do přibližně 19:15 CET.
+
+Po předchozím čekání na DNS byl v 19:05 CET jednou restartován proces vystavení certifikátu odebráním a okamžitým obnovením vlastní domény v Pages. Obnovení `www.forestvital.cz` bylo ověřeno; DNS se při tomto kroku neměnilo.
 
 | Název | Typ | Hodnota | TTL |
 | --- | --- | --- | --- |

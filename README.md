@@ -4,7 +4,7 @@ A Czech, single-viewport product showroom for **www.forestvital.cz**, separate f
 
 **Primary address:** https://www.forestvital.cz/
 
-The custom domain is configured in GitHub Pages and Forpsi DNS. DNS propagation and HTTPS certificate activation are still being verified. The [GitHub Pages deployment address](https://majkpowa.github.io/forestvital/?v=1.1.1) remains useful for deployment checks, but Pages may redirect it to the custom domain. See [deployment configuration and rollback](docs/custom-domain-deployment.md).
+The custom domain is configured in GitHub Pages and Forpsi DNS. On 2 November 2026 at 19:06 CET, DNS and strict TLS validation passed for both `forestvital.cz` and `www.forestvital.cz`; the primary HTTPS page returned 200 and the HTTPS apex redirected to `www`. HTTPS enforcement is enabled in Pages. The [GitHub Pages deployment address](https://majkpowa.github.io/forestvital/?v=1.1.1) redirects to the custom domain. See [deployment verification, configuration and rollback](docs/custom-domain-deployment.md).
 
 This is a functional design preview. It creates no real orders, takes no payments and sends no checkout details. Inventory is unknown; no availability claims are made. DNS is administered separately from the repository; publishing on the custom domain does not enable commerce integrations.
 
