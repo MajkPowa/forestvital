@@ -3,7 +3,7 @@
     "id": "pamet",
     "name": "Paměť",
     "fullName": "Paměť",
-    "price": 777,
+    "price": 888.0,
     "category": "Rostlinné komplexy",
     "subtitle": "Bacopa · jinan · B-komplex",
     "package": "60 tobolek",
@@ -13,13 +13,15 @@
     "warning": "Nevhodné pro děti, těhotné a kojící ženy; při antikoagulační léčbě konzultovat lékaře. Před operací doporučeno přerušit užívání.",
     "image": "assets/showroom/pamet.webp",
     "editorialImage": "assets/products/pamet.webp",
-    "showroomImage": "assets/showroom/pamet.webp"
+    "showroomImage": "assets/showroom/pamet.webp",
+    "priceExclVat": 792.86,
+    "vatRate": 12
   },
   {
     "id": "chlap",
     "name": "Chlap",
     "fullName": "Chlap",
-    "price": 888,
+    "price": 888.0,
     "category": "Rostlinné komplexy",
     "subtitle": "Kotvičník · ženšen · maca",
     "package": "Tobolky",
@@ -29,13 +31,15 @@
     "warning": "Nevhodné pro děti a při užívání antikoagulancií; opatrnost u hormonálně senzitivních onemocnění a při užívání antidepresiv.",
     "image": "assets/showroom/chlap.webp",
     "editorialImage": "assets/products/chlap.webp",
-    "showroomImage": "assets/showroom/chlap.webp"
+    "showroomImage": "assets/showroom/chlap.webp",
+    "priceExclVat": 792.86,
+    "vatRate": 12
   },
   {
     "id": "cbd",
     "name": "CBD, CBG, CBC",
     "fullName": "CBD, CBG, CBC",
-    "price": 1230,
+    "price": 1230.01,
     "category": "Kanabinoidy",
     "subtitle": "CBD · CBG · CBC",
     "package": "60 tobolek",
@@ -45,13 +49,15 @@
     "warning": "Nevhodné pro děti, těhotné a kojící ženy. Při užívání léků konzultovat lékaře. Před komerčním použitím ověřit aktuální pravidla pro kanabinoidy v potravinách.",
     "image": "assets/showroom/cbd.webp",
     "editorialImage": "assets/products/cbd.webp",
-    "showroomImage": "assets/showroom/cbd.webp"
+    "showroomImage": "assets/showroom/cbd.webp",
+    "priceExclVat": 1098.22,
+    "vatRate": 12
   },
   {
     "id": "synbiotika",
     "name": "Synbiotika",
     "fullName": "Synbiotika",
-    "price": 1111,
+    "price": 1222.01,
     "category": "Mikrobiální kultury",
     "subtitle": "Inulin · 11 kultur",
     "package": "45 tobolek",
@@ -61,13 +67,15 @@
     "warning": "Nevhodné pro děti do 3 let. V těhotenství, při kojení nebo při závažném onemocnění konzultovat lékaře; při antibiotikách dodržet odstup 2–3 hodiny.",
     "image": "assets/showroom/synbiotika.webp",
     "editorialImage": "assets/products/synbiotika.webp",
-    "showroomImage": "assets/showroom/synbiotika.webp"
+    "showroomImage": "assets/showroom/synbiotika.webp",
+    "priceExclVat": 1091.08,
+    "vatRate": 12
   },
   {
     "id": "oci",
     "name": "Oči",
     "fullName": "Oči",
-    "price": 777,
+    "price": 888.0,
     "category": "Rostlinné komplexy",
     "subtitle": "Borůvka · měsíček · zinek",
     "package": "Tobolky",
@@ -77,6 +85,33 @@
     "warning": "Doplněk stravy, nepřekračovat doporučenou dávku. Další upozornění ověřit podle aktuální etikety.",
     "image": "assets/showroom/oci.webp",
     "editorialImage": "assets/products/oci.webp",
-    "showroomImage": "assets/showroom/oci.webp"
+    "showroomImage": "assets/showroom/oci.webp",
+    "priceExclVat": 792.86,
+    "vatRate": 12
+  },
+  {
+    "id": "cbd-mast",
+    "name": "CBD mast",
+    "fullName": "CBD mast",
+    "price": 690.0,
+    "priceExclVat": 570.25,
+    "vatRate": 21,
+    "category": "Zevní péče",
+    "subtitle": "Péče o pokožku",
+    "package": "Balení upřesníme",
+    "description": "CBD mast pro zevní péči o pokožku. Podrobné informace o balení, složení a použití doplníme podle etikety výrobku.",
+    "ingredients": "Úplné složení zatím v dodaných podkladech není uvedené.",
+    "dosage": "Způsob použití doplníme podle aktuální etikety výrobku.",
+    "warning": "Před použitím se řiďte pokyny a upozorněními na aktuální etiketě výrobku.",
+    "ingredientsLabel": "Složení",
+    "ingredientsBasisLabel": "",
+    "dosageLabel": "Použití",
+    "isTopical": true,
+    "detailsPending": true,
+    "imagePending": true,
+    "image": "assets/showroom/cbd-mast-pending.svg",
+    "editorialImage": "assets/showroom/cbd-mast-pending.svg",
+    "showroomImage": "assets/showroom/cbd-mast-pending.svg",
+    "lead": "Zevní péče. Fotografie a podrobnosti budou doplněny."
   }
 ]

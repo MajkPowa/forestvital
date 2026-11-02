@@ -1,0 +1,67 @@
+{
+  "source": "ceny FC.docx",
+  "sourceSha256": "dd768dd78712eaaad85c509873ad340e970c0bd2dbf9399103d88312ca31b168",
+  "date": "2026-11-02",
+  "sourcePricesIncludeVat": false,
+  "currency": "CZK",
+  "grossRounding": "Per unit, decimal half-up to two decimal places; source net prices retained exactly.",
+  "vatClassification": "12% food-supplement capsules; 21% topical ointment treated as cosmetic, not a registered medicinal product.",
+  "vatSources": [
+    "https://portal.gov.cz/informace/general-vat-rules-and-rates-INF-205",
+    "https://mze.gov.cz/public/portal/mze/potraviny/doplnky-stravy",
+    "https://financnisprava.gov.cz/assets/cs/prilohy/d-seznam-dani/Informace_GFR_ke_zmenam_sazeb_DPH_od_1_1_2024.pdf"
+  ],
+  "products": [
+    {
+      "id": "pamet",
+      "name": "Paměť",
+      "net": 792.86,
+      "vatRate": 12,
+      "gross": 888.0
+    },
+    {
+      "id": "chlap",
+      "name": "Chlap",
+      "net": 792.86,
+      "vatRate": 12,
+      "gross": 888.0
+    },
+    {
+      "id": "cbd",
+      "name": "CBD, CBG, CBC",
+      "net": 1098.22,
+      "vatRate": 12,
+      "gross": 1230.01
+    },
+    {
+      "id": "synbiotika",
+      "name": "Synbiotika",
+      "net": 1091.08,
+      "vatRate": 12,
+      "gross": 1222.01
+    },
+    {
+      "id": "oci",
+      "name": "Oči",
+      "net": 792.86,
+      "vatRate": 12,
+      "gross": 888.0
+    },
+    {
+      "id": "cbd-mast",
+      "name": "CBD mast",
+      "net": 570.25,
+      "vatRate": 21,
+      "gross": 690.0
+    }
+  ],
+  "ointmentPhotoStatus": "User will provide product photograph later. A clearly marked original SVG missing-photo symbol is used; it is not a real package image. No image generation performed without a source.",
+  "queenBeeIncluded": false,
+  "ointmentPendingDetails": [
+    "brand",
+    "package size",
+    "INCI/ingredients",
+    "label directions and warnings",
+    "source photo"
+  ]
+}
