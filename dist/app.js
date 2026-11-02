@@ -22,7 +22,6 @@ const symbols={
   plus:'<path d="M5 12h14m-7-7v14"/>',
   minus:'<path d="M5 12h14"/>',
   check:'<path d="m5 12 4.5 4.5L19 7"/>',
-  film:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="m10 8 6 4-6 4Z M7 4v16m10-16v16"/>',
   leaf:'<path d="M5 19C-1 6 11 1 21 3c1.5 10-4 21-16 16Zm0 0L17 7m-8 8-1-6m5 2 6 1"/>'
 };
 const icon=name=>`<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">${symbols[name]||symbols.leaf}</svg>`;
@@ -110,7 +109,7 @@ function addToCart(id,quantity=1){
 }
 function renderCart(){
   if(!products.length){$('#cart-content').innerHTML=`<div class="empty">${icon('bag')}<h3>Připravujeme váš výběr.</h3><p>Čekáme na načtení produktů a cen. Pokud se kolekce nenačte, zkuste ji obnovit.</p><button class="button secondary" data-action="retry">Obnovit kolekci ${icon('arrow')}</button></div>`;return;}
-  $('#cart-content').innerHTML=cart.length?`<div class="cart-items">${cart.map(item=>{const product=productById(item.id);return `<article class="cart-item"><button class="cart-thumb" data-action="product" data-id="${item.id}" aria-label="Detail ${escapeHtml(product.name)}"><img src="${product.image}" alt=""></button><div><h3>${escapeHtml(product.name)}</h3><small>${escapeHtml(product.package)} · ${currency(product.price)} / balení</small>${qtyControl('cart',item.qty,item.id)}</div><div class="cart-end"><span>${currency(product.price*item.qty)}</span><button data-action="remove" data-id="${item.id}" aria-label="Odebrat ${escapeHtml(product.name)} z košíku">Odebrat</button></div></article>`;}).join('')}</div><div class="cart-summary"><div class="summary-row"><span>Produkty (${countCart()} ks)</span><span>${currency(subtotal())}</span></div><div class="summary-row"><span>Doprava</span><span>V dalším kroku</span></div><div class="summary-row total"><strong>Mezisoučet</strong><strong>${currency(subtotal())}</strong></div><button class="button primary" data-action="checkout">Vyzkoušet objednávku ${icon('arrow')}</button><p class="demo-note">Toto je ukázkový košík. Nevzniká skutečná objednávka, data se neodesílají a nic neplatíte.</p><button class="text-button" data-close>Ještě se porozhlédnout</button></div>`:`<div class="empty">${icon('bag')}<h3>Prostor pro váš výběr.</h3><p>Košík je zatím prázdný.<br>Poznejte naši kolekci šesti produktů.</p><button class="button primary" data-action="continue">Prozkoumat kolekci ${icon('arrow')}</button></div>`;
+  $('#cart-content').innerHTML=cart.length?`<div class="cart-items">${cart.map(item=>{const product=productById(item.id);return `<article class="cart-item"><button class="cart-thumb" data-action="product" data-id="${item.id}" aria-label="Detail ${escapeHtml(product.name)}"><img src="${product.image}" alt=""></button><div><h3>${escapeHtml(product.name)}</h3><small>${escapeHtml(product.package)} · ${currency(product.price)} / balení</small>${qtyControl('cart',item.qty,item.id)}</div><div class="cart-end"><span>${currency(product.price*item.qty)}</span><button data-action="remove" data-id="${item.id}" aria-label="Odebrat ${escapeHtml(product.name)} z košíku">Odebrat</button></div></article>`;}).join('')}</div><div class="cart-summary"><div class="summary-row"><span>Produkty (${countCart()} ks)</span><span>${currency(subtotal())}</span></div><div class="summary-row"><span>Doprava</span><span>V dalším kroku</span></div><div class="summary-row total"><strong>Mezisoučet</strong><strong>${currency(subtotal())}</strong></div><button class="button primary" data-action="checkout">Vyzkoušet objednávku ${icon('arrow')}</button><p class="demo-note">Toto je ukázkový košík. Nevzniká skutečná objednávka, data se neodesílají a nic neplatíte.</p><button class="text-button" data-close>Ještě se porozhlédnout</button></div>`:`<div class="empty">${icon('bag')}<h3>Prostor pro váš výběr.</h3><p>Košík je zatím prázdný.<br>Poznejte naši kolekci pěti produktů.</p><button class="button primary" data-action="continue">Prozkoumat kolekci ${icon('arrow')}</button></div>`;
 }
 function changeCart(id,change,action){const item=cart.find(entry=>entry.id===id);if(!item)return;item.qty=Math.min(99,item.qty+change);if(item.qty<1)cart=cart.filter(entry=>entry.id!==id);persist();renderCart();const target=$(`[data-action="${action}"][data-id="${id}"]`,$('#cart-dialog'));(target&&!target.disabled?target:$('#cart-dialog button[data-action="checkout"]')||$('#cart-dialog button[data-action="continue"]'))?.focus({preventScroll:true});}
 function focusCheckout(){const heading=$('#checkout-title');heading.tabIndex=-1;if($('#checkout-dialog').open)heading.focus({preventScroll:true});}
@@ -141,7 +140,6 @@ document.addEventListener('click',event=>{
   switch(action){
     case'catalog':resetFilters();openDialog('catalog-dialog');break;
     case'about':openDialog('about-dialog');break;
-    case'film':openDialog('film-dialog');if(!matchMedia('(prefers-reduced-motion:reduce)').matches)$('#forest-video').play().catch(()=>{});break;
     case'search':focusSearch();break;
     case'saved':category='saved';query='';$('#catalog-search').value='';renderProducts();openDialog('catalog-dialog');break;
     case'reset':resetFilters();break;
@@ -176,11 +174,9 @@ document.addEventListener('submit',event=>{
 $('#catalog-search').addEventListener('input',event=>{query=event.target.value.trim();renderProducts();});
 $('#catalog-sort').addEventListener('change',renderProducts);
 $$('dialog').forEach(dialog=>{dialog.addEventListener('cancel',event=>{event.preventDefault();closeDialog(dialog);});dialog.addEventListener('click',event=>{if(event.target===dialog){const rect=dialog.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)closeDialog(dialog);}});});
-$('#film-dialog').addEventListener('close',()=>$('#forest-video').pause());
-document.addEventListener('visibilitychange',()=>{if(document.hidden)$('#forest-video').pause();});
 async function init(){
   hydrate();
-  try{const response=await fetch('products.json?v=1.1.0');if(!response.ok)throw new Error('Unavailable catalog');products=await response.json();saved=[...new Set(saved.filter(id=>productById(id)))];cart=cart.filter(item=>productById(item.id)&&Number.isFinite(item.qty)&&item.qty>0).map(item=>({id:item.id,qty:Math.min(99,Math.floor(item.qty))}));persist();renderProducts();renderCart();document.dispatchEvent(new CustomEvent('forest:catalog-ready'));}
+  try{const response=await fetch('products.json?v=1.1.1');if(!response.ok)throw new Error('Unavailable catalog');products=await response.json();saved=[...new Set(saved.filter(id=>productById(id)))];cart=cart.filter(item=>productById(item.id)&&Number.isFinite(item.qty)&&item.qty>0).map(item=>({id:item.id,qty:Math.min(99,Math.floor(item.qty))}));persist();renderProducts();renderCart();document.dispatchEvent(new CustomEvent('forest:catalog-ready'));}
   catch{document.dispatchEvent(new CustomEvent('forest:catalog-error'));$('#product-grid').innerHTML=`<div class="empty">${icon('info')}<h3>Kolekce se nepodařila načíst.</h3><p>Zkontrolujte připojení a obnovte stránku.</p><button class="button secondary" data-action="retry">Zkusit znovu ${icon('arrow')}</button></div>`;$('#result-count').textContent='Kolekce není dostupná';}
 }
 document.addEventListener('click',event=>{if(event.target.closest('[data-action="retry"]'))init();});

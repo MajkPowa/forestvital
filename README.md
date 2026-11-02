@@ -1,8 +1,8 @@
-# Forest Vital 1.1.0
+# Forest Vital 1.1.1
 
-A Czech, single-viewport product showroom for **www.forestvital.cz**, separate from Mijoli. The six actual products share one fixed page: choosing a package changes its full scene, name, palette, photograph, price and purchase ID. There is no vertical document scroll and no scroll-controlled product selection. A searchable collection, product information, saved products, cart and three-step demo checkout open in native dialogs with their own internal scrolling.
+A Czech, single-viewport product showroom for **www.forestvital.cz**, separate from Mijoli. The five current products share one fixed page: choosing a package changes its full scene, name, palette, photograph, price and purchase ID. There is no vertical document scroll and no scroll-controlled product selection. A searchable collection, product information, saved products, cart and three-step demo checkout open in native dialogs with their own internal scrolling.
 
-**Live preview:** https://majkpowa.github.io/forestvital/?v=1.1.0
+**Live preview:** https://majkpowa.github.io/forestvital/?v=1.1.1
 
 This is a functional design preview. It creates no real orders, takes no payments and sends no checkout details. Inventory is unknown; no availability claims are made. The domain is a target identity; DNS is not configured by this repository.
 
@@ -14,15 +14,15 @@ Both supplied reference recordings were examined in full: [496-frame cinematic r
 
 ## Real products and original media
 
-The supplied `FC produkty.docx` remains the source for product descriptions, prices, ingredients, dosage and warnings. Package counts for Paměť, CBD and Synbiotika use previously supplied catalog records; Queen Bee's 60 capsules are in the document. No count is asserted for Chlap or Oči. No testimonials, customer counts, certifications or business contacts are invented.
+The supplied `FC produkty.docx` remains the source for product descriptions, prices, ingredients, dosage and warnings. Package counts for Paměť, CBD and Synbiotika use previously supplied catalog records. No count is asserted for Chlap or Oči. No testimonials, customer counts, certifications or business contacts are invented.
 
-Six new **Higgsfield GPT Image 2.5** transparent package renders use the original user-supplied package photographs. The model preserves the label identity while improving lighting, edge clarity and materials. Assets are illustrative package renders rather than interactive 3D models. [Prompts, job IDs and the 16.5-credit quote](docs/product-image-generation.json) are retained, with source PNGs under `source-assets/higgsfield-products/` and optimized alpha WebP assets under `dist/assets/showroom/`. Original editorial photographs are retained as fallbacks.
+Five current **Higgsfield GPT Image 2.5** transparent package renders use the original user-supplied package photographs. The model preserves the label identity while improving lighting, edge clarity and materials. Assets are illustrative package renders rather than interactive 3D models. [Prompts, job IDs and the 16.5-credit quote](docs/product-image-generation.json) are retained, with source PNGs under `source-assets/higgsfield-products/` and optimized alpha WebP assets under `dist/assets/showroom/`. Original editorial photographs are retained as fallbacks.
 
-The optional, silent **Higgsfield Seedance 2.5** forest film shows actual Paměť, Queen Bee and Synbiotika packages. [Generation provenance and the 96-credit quote](docs/cinema-generation.json) are retained. Its master is in `source-assets/cinema/`; the published 720p clip is under 1 MB and loads only on request. Reduced-motion users receive the poster and native playback control. Generated scenery is illustrative, not documentary footage.
+Queen Bee was removed from the offer in 1.1.1. Its photographs and the forest film/hero containing that package are no longer served from `dist/`; reversible archives are retained under `source-assets/retired-queen-bee/`. Historical media generation records and previous release analyses remain available. Existing saved/cart IDs are validated against the current catalog on load, removing the retired product while keeping other selections.
 
 ## Interaction and accessibility
 
-- Direct six-product choices, previous/next controls, keyboard arrows/Home/End and optional touch swipe share one active product state.
+- Direct five-product choices, previous/next controls, keyboard arrows/Home/End and optional touch swipe share one active product state.
 - Fine-pointer product hover requires physical pointer movement and a short intent delay. Layout changes and page movement beneath a stationary cursor cannot select a product.
 - Full ingredients, dosage and warnings stay in HTML, independent of images and animation.
 - Native dialogs contain focus, support Escape and restore the parent dialog and original trigger across nested flows.
@@ -39,4 +39,4 @@ Open `http://localhost:4174/`. No framework install or build step is required. G
 
 ## Verification
 
-Release checks and their limits are recorded in [release QA](docs/release-1.1.0-qa.md). Responsive browser checks do not substitute for physical-device or screen-reader testing. Proposed participant tasks and measurable acceptance criteria are included in the UI/UX analysis; no conversion improvement is claimed.
+The current removal checks are recorded in [release 1.1.1 QA](docs/release-1.1.1-qa.md), with the broader implementation checks and their limits in [release 1.1.0 QA](docs/release-1.1.0-qa.md). Responsive browser checks do not substitute for physical-device or screen-reader testing. Proposed participant tasks and measurable acceptance criteria are included in the UI/UX analysis; no conversion improvement is claimed.

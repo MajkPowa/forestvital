@@ -48,9 +48,10 @@
     {
       "product_id": "queen-bee",
       "job_id": "774486a5-dca2-4e1a-a54b-09b1b36adf38",
-      "asset": "dist/assets/showroom/queen-bee.webp",
+      "asset": "source-assets/retired-queen-bee/showroom/queen-bee.webp",
       "prompt": "Create a premium photorealistic product packshot from this exact supplied supplement bottle. Preserve the physical package identity and proportions, amber glass bottle, black ribbed screw cap, gold ochre label with black honeycomb borders, bee and floral wreath emblem; exact large name QUEEN BEE and Czech line MATEŘÍ KAŠIČKA, lower line REISHI * CORDYCEPS * CHAGA. Retain the label layout and colors; do not invent or redesign the label. Improve photographic clarity, crisp edges, tactile material and clean controlled commercial studio lighting with soft highlights from upper left and a delicate warm rim reflection. One single upright bottle, frontal with a very subtle three-quarter perspective of at most 4 degrees, 85mm lens appearance, cap and entire base fully visible. The bottle occupies 84 percent of image height, centered with generous clear space around all sides. No props, no pedestal, no scenery, no floor, no other bottles, no duplicate labels, no added text. A real transparent alpha background, not a white or checkerboard background. No large cast shadow baked into the asset; the web scene will supply its own ground shadow. Output a polished ecommerce hero cutout faithfully based on this real package, not a fictional generic supplement.",
-      "master": "source-assets/higgsfield-products/queen-bee.png"
+      "master": "source-assets/higgsfield-products/queen-bee.png",
+      "retired_in": "1.1.1"
     }
   ],
   "encoding": "WebP conversion preserves transparent alpha; no retouching, recoloring or compositing is applied to the generated product assets."

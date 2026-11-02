@@ -1,18 +1,17 @@
-/* Forest Vital 1.1.0 — one viewport, six real product worlds. */
+/* Forest Vital 1.1.1 — one viewport, five real product worlds. */
 (() => {
   'use strict';
   const root = document.getElementById('showroom-root');
   if (!root) return;
   document.body.classList.add('showroom-mode');
   document.documentElement.classList.add('showroom-page');
-  const order = ['pamet','chlap','cbd','synbiotika','oci','queen-bee'];
+  const order = ['pamet','chlap','cbd','synbiotika','oci'];
   const worlds = {
     pamet:{world:'#243e56',ink:'#f7f5ed',muted:'#d2dbdc',action:'#e2c38c',actionInk:'#273e4d'},
     chlap:{world:'#623a32',ink:'#fff9ee',muted:'#e8d8c7',action:'#efd9ae',actionInk:'#4c3027'},
     cbd:{world:'#254a3c',ink:'#f8f4e8',muted:'#d0ddd2',action:'#cfdf9a',actionInk:'#263d30'},
     synbiotika:{world:'#b8d4cd',ink:'#17372d',muted:'#3d5e52',action:'#244d40',actionInk:'#f8f5e9'},
     oci:{world:'#5f9f98',ink:'#102d26',muted:'#102d26',action:'#153f36',actionInk:'#f8f5e9'},
-    'queen-bee':{world:'#d4be85',ink:'#263b2d',muted:'#3d4d37',action:'#314c36',actionInk:'#f8f5e9'}
   };
   const leads = {
     pamet:'Rostlinné extrakty, vitaminy a minerály.',
@@ -20,7 +19,6 @@
     cbd:'Kanabinoidy v kombinaci s rostlinnými extrakty.',
     synbiotika:'Prebiotická vláknina a jedenáct kultur.',
     oci:'Rostlinné extrakty, vitaminy a minerály.',
-    'queen-bee':'Mateří kašička, vitální houby a vitaminy.'
   };
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const hover = matchMedia('(hover:hover) and (pointer:fine)');
@@ -32,7 +30,6 @@
   const previewLocks = new Map();
   let collection = [], hoverTimer, mediaTimer, hoverEnabled = true;
   let lastPreviewPoint = null, touchStart = null, info;
-  const play = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 4 12 8-12 8Z"/></svg>';
 
   function unavailable() {
     if (state.ready) return;
@@ -45,10 +42,11 @@
     if (!collection.length) { unavailable(); return; }
     if (!collection.some(product=>product.id===state.id)) state.id=collection[0].id;
     if (state.ready) { paint(false); return; }
+    root.style.setProperty('--showroom-count',String(collection.length));
     state.ready=true;
     root.innerHTML = `<div class="showroom-shell"><section class="showroom-scene" aria-labelledby="showroom-title" data-number="01">
       <div class="showroom-copy">
-        <div class="showroom-kicker"><p><span>RECEPTURA</span> <b id="showroom-position">01 / 06</b></p><button class="showroom-film-button" data-action="film">${play}<span>Lesní film</span></button></div>
+        <div class="showroom-kicker"><p><span>RECEPTURA</span> <b id="showroom-position">01 / ${number(collection.length)}</b></p></div>
         <h1 id="showroom-title"></h1><p id="showroom-subtitle" class="showroom-subtitle"></p><p id="showroom-lead" class="showroom-lead"></p>
         <div class="showroom-commerce"><div class="showroom-value"><span id="showroom-price"></span><small id="showroom-package"></small></div><div class="showroom-purchase-actions"><button class="button primary showroom-add" data-action="add">Přidat do košíku ${icon('bag')}</button><button class="icon-control showroom-save" data-action="save" aria-label="Uložit produkt" aria-pressed="false">${icon('heart')}</button></div></div>
         <div class="showroom-info-links" role="group" aria-label="Podrobnosti o produktu"><button data-showroom-info="ingredients">Složení ${icon('plus')}</button><button data-showroom-info="dosage">Užívání ${icon('plus')}</button><button data-showroom-info="warning">Upozornění ${icon('plus')}</button></div>

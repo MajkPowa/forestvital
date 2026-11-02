@@ -78,21 +78,5 @@
     "image": "assets/showroom/oci.webp",
     "editorialImage": "assets/products/oci.webp",
     "showroomImage": "assets/showroom/oci.webp"
-  },
-  {
-    "id": "queen-bee",
-    "name": "Queen Bee",
-    "fullName": "Queen Bee – mateří kašička a vitální houby",
-    "price": 790,
-    "category": "Houby a kašička",
-    "subtitle": "Mateří kašička · reishi · chaga",
-    "package": "60 tobolek",
-    "description": "Kombinace mateří kašičky s extrakty z hub reishi, chaga a cordyceps. Obsahuje vitaminy C a D3, které přispívají k normální funkci imunitního systému. Balení má 60 tobolek.",
-    "ingredients": "Mateří kašička 100 mg; reishi 100 mg; chaga 100 mg; cordyceps 100 mg; vitamin C 80 mg; vitamin D3 5 µg. Plnidlo: mikrokrystalická celulóza; želatinová tobolka.",
-    "dosage": "1 kapsle 1–2× denně.",
-    "warning": "Nevhodné pro děti. Nepřekračovat doporučenou denní dávku. Osoby s alergií na včelí produkty by měly věnovat pozornost obsažené mateří kašičce.",
-    "image": "assets/showroom/queen-bee.webp",
-    "editorialImage": "assets/products/queen-bee.webp",
-    "showroomImage": "assets/showroom/queen-bee.webp"
   }
 ]

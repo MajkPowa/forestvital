@@ -27,5 +27,8 @@
     "status": "Retired before release after the user clarified the non-scrolling OnePage product experience. The film is now optional in a native dialog."
   },
   "packaging": "Paměť, Queen Bee, Synbiotika: actual supplied packages. AI-generated scene, not documentary footage.",
-  "web_video": "dist/assets/cinema/forest-film-web.mp4"
+  "web_video": "dist/assets/cinema/forest-film-web.mp4",
+  "retired_in": "1.1.1",
+  "retirement_reason": "Queen Bee was removed from the offer. The film is no longer shown or served by the website.",
+  "archived_web_video": "source-assets/retired-queen-bee/cinema/forest-film-web.mp4"
 }
