@@ -2,9 +2,11 @@
 
 A Czech, single-viewport product showroom for **www.forestvital.cz**, separate from Mijoli. The five current products share one fixed page: choosing a package changes its full scene, name, palette, photograph, price and purchase ID. There is no vertical document scroll and no scroll-controlled product selection. A searchable collection, product information, saved products, cart and three-step demo checkout open in native dialogs with their own internal scrolling.
 
-**Live preview:** https://majkpowa.github.io/forestvital/?v=1.1.1
+**Primary address:** https://www.forestvital.cz/
 
-This is a functional design preview. It creates no real orders, takes no payments and sends no checkout details. Inventory is unknown; no availability claims are made. The domain is a target identity; DNS is not configured by this repository.
+The custom domain is configured in GitHub Pages and Forpsi DNS. DNS propagation and HTTPS certificate activation are still being verified. The [GitHub Pages deployment address](https://majkpowa.github.io/forestvital/?v=1.1.1) remains useful for deployment checks, but Pages may redirect it to the custom domain. See [deployment configuration and rollback](docs/custom-domain-deployment.md).
+
+This is a functional design preview. It creates no real orders, takes no payments and sends no checkout details. Inventory is unknown; no availability claims are made. DNS is administered separately from the repository; publishing on the custom domain does not enable commerce integrations.
 
 ## Design and evidence
 

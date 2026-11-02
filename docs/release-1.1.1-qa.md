@@ -12,4 +12,11 @@ Lesní film a staré hero obsahovaly také vyřazené balení, proto byly spolu 
 - V aktivním HTML, JavaScriptu a katalogových datech nejsou odkazy na Queen Bee, filmové tlačítko ani odstraněný video dialog.
 - `node --check dist/app.js`, `node --check dist/showroom.js` a `git diff --check` prošly.
 
-Tento záznam zachycuje technické kontroly změny; nepředstavuje zákaznické ani fyzické mobilní testování. Širší přejímka a její limity zůstávají v [záznamu 1.1.0](release-1.1.0-qa.md).
+## Ověření v prohlížeči
+
+- Pět přímých voleb odpovídá aktuálním produktům. Poslední Oči zobrazují `05 / 05`, další šipka je zakázaná a sousední náhledy pokračují na Paměť a Chlap.
+- Katalog ukazuje počet `05`; vyhledání Queen Bee vrací nula produktů.
+- Při viewportu 390 × 844 a 320 × 568 dokument nepřetéká do šířky ani výšky. Poslední dvojice produktových voleb je ve druhém řádku vycentrovaná.
+- Publikované HTML, JavaScript, CSS a katalog odpovídají lokálním souborům verze 1.1.1. Odebrané produktové fotografie, lesní film a staré hero nejsou na veřejném nasazení dostupné.
+
+Tento záznam zachycuje technické a browser kontroly změny; nepředstavuje zákaznické ani fyzické mobilní testování. Ověření DNS a certifikátu vlastní domény probíhá samostatně podle [záznamu nasazení](custom-domain-deployment.md). Širší přejímka a její limity zůstávají v [záznamu 1.1.0](release-1.1.0-qa.md).
