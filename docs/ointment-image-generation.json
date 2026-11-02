@@ -41,6 +41,8 @@
     ],
     "identityReviewed": true,
     "browserReview": "passed: desktop 1422x800, mobile 390x844 and 320x568 CSS px; full tin visible, no document overflow, source identity preserved on warm background; catalog and cart load new WebP; missing-photo note hidden; no console errors",
-    "published": "pending"
+    "published": "passed: 2026-11-02 23:05 CET, https://www.forestvital.cz/?v=1.2.1; Pages run 41533989541 succeeded for 197dbe6fc300f22422fc55c2f983a40b844781bb; public browser image loaded and full tin visible; both new assets HTTP 200 and binary-equal to local; retired placeholder HTTP 404",
+    "assetSha256": "b645ddc4a3b328ce9786ce3bd71cab89a379a660c01dc41842c8e681aff0480c",
+    "fallbackSha256": "9fe04c4f2599368213cb137f2f1ac9213c8d13b9f1be1bd4b68ca2cfe0ee41c9"
   }
 }

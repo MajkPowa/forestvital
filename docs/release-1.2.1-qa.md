@@ -21,6 +21,12 @@ Z fotografie nejsou doložené objem ani hmotnost balení, úplné INCI/složen�
 | Šestá scéna, katalog, alt text a odstranění poznámky o čekající fotografii | Prošlo v lokálním prohlížeči. Scéna, vyhledaný katalog i košík načítají nový WebP (1792 px); alt text uvádí Forest Clinic Konopná mast FORTE. Poznámka o chybějící fotografii je skrytá. Přidání a odebrání testovací masti funguje; původní košík obnoven. |
 | Mobilní rozložení a načtení obrazu | Prošlo při 390 × 844 a 320 × 568 CSS px. Celá dóza, cena a ovládání zůstávají viditelné; dokument nepřetéká ani vodorovně, ani svisle. Na desktopu 1422 × 800 px fotografie zapadá do teplého pozadí. Dočasný viewport obnoven. |
 | Syntaxe a asset cesty | Prošlo: `node --check` obou JS, `git diff --check`, existence obrázků a verze cache 1.2.1. Žádné aktivní odkazy na starý zástupný symbol, žádné chyby v konzoli při ověřeném toku. |
-| Veřejné HTTPS nasazení 1.2.1 | Čeká na dokončení releasu a živé ověření. |
+| Veřejné HTTPS nasazení 1.2.1 | Prošlo 2. 11. 2026 v 23:05 CET. [Pages workflow 41533989541](https://github.com/MajkPowa/forestvital/actions/runs/41533989541) uspěl pro commit `197dbe6fc300f22422fc55c2f983a40b844781bb`. Veřejná stránka a katalog vracejí 200, oba nové WebP soubory jsou binárně shodné s lokálními. Původní zástupný SVG vrací 404. HTTPS apex i HTTP varianty přesměrují na hlavní HTTPS www adresu. Veřejný prohlížeč při 1280 × 720 px potvrzuje úplnou fotografii, správný alt text, skrytou poznámku a zachované ceny. |
 
-Web zůstává funkčním náhledem bez skutečných plateb a objednávek. Tento dokument rozlišuje potvrzené zdrojové a obrazové kontroly od dosud čekajících kontrol prohlížeče a nasazení.
+Veřejné assety při ověření:
+
+- `assets/showroom/cbd-mast.webp`: 964 060 B, SHA-256 `b645ddc4a3b328ce9786ce3bd71cab89a379a660c01dc41842c8e681aff0480c`.
+- `assets/products/cbd-mast-source.webp`: 140 248 B, SHA-256 `9fe04c4f2599368213cb137f2f1ac9213c8d13b9f1be1bd4b68ca2cfe0ee41c9`.
+- [Release 1.2.1 a zdrojový ZIP](https://github.com/MajkPowa/forestvital/releases/tag/v1.2.1).
+
+Web zůstává funkčním náhledem bez skutečných plateb a objednávek. Kontroly prohlížeče používají emulované rozměry, nikoli fyzický telefon.
