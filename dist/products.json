@@ -92,14 +92,15 @@
   {
     "id": "cbd-mast",
     "name": "CBD mast",
-    "fullName": "CBD mast",
+    "fullName": "Forest Clinic Konopná mast FORTE",
+    "brand": "Forest Clinic",
     "price": 690.0,
     "priceExclVat": 570.25,
     "vatRate": 21,
     "category": "Zevní péče",
-    "subtitle": "Péče o pokožku",
+    "subtitle": "Konopná mast FORTE",
     "package": "Balení upřesníme",
-    "description": "CBD mast pro zevní péči o pokožku. Podrobné informace o balení, složení a použití doplníme podle etikety výrobku.",
+    "description": "Konopná mast FORTE značky Forest Clinic ve stříbrné kovové dóze. Velikost balení, úplné složení a pokyny k použití doplníme podle etikety výrobku.",
     "ingredients": "Úplné složení zatím v dodaných podkladech není uvedené.",
     "dosage": "Způsob použití doplníme podle aktuální etikety výrobku.",
     "warning": "Před použitím se řiďte pokyny a upozorněními na aktuální etiketě výrobku.",
@@ -108,10 +109,10 @@
     "dosageLabel": "Použití",
     "isTopical": true,
     "detailsPending": true,
-    "imagePending": true,
-    "image": "assets/showroom/cbd-mast-pending.svg",
-    "editorialImage": "assets/showroom/cbd-mast-pending.svg",
-    "showroomImage": "assets/showroom/cbd-mast-pending.svg",
-    "lead": "Zevní péče. Fotografie a podrobnosti budou doplněny."
+    "imagePending": false,
+    "image": "assets/showroom/cbd-mast.webp",
+    "editorialImage": "assets/products/cbd-mast-source.webp",
+    "showroomImage": "assets/showroom/cbd-mast.webp",
+    "lead": "Forest Clinic · zevní péče."
   }
 ]

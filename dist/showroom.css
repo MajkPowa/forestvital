@@ -1,4 +1,4 @@
-/* Forest Vital 1.2.0 — the product world fits a single viewport. */
+/* Forest Vital 1.2.1 — the product world fits a single viewport. */
 html.showroom-page { height:100%; overflow:hidden; overscroll-behavior:none; }
 body.showroom-mode { --showroom-world:#243e56;--showroom-ink:#f7f5ed;--showroom-muted:#d2dbdc;--showroom-action:#e2c38c;--showroom-actionInk:#273e4d; margin:0;height:100dvh;min-height:0;display:flex;flex-direction:column;overflow:hidden;overscroll-behavior:none;background:var(--showroom-world);color:var(--showroom-ink);transition:background-color .4s,color .3s; }
 .showroom-mode>.topline,.showroom-mode>.mobile-nav,.showroom-mode>footer { display:none; }

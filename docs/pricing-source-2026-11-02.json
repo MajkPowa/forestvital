@@ -55,13 +55,25 @@
       "gross": 690.0
     }
   ],
-  "ointmentPhotoStatus": "User will provide product photograph later. A clearly marked original SVG missing-photo symbol is used; it is not a real package image. No image generation performed without a source.",
+  "ointmentPhotoStatus": "Release 1.2.1 replaces the temporary missing-photo symbol with a studio image derived from the user-supplied real package photograph. The original photograph is retained as a fallback. No package size, composition or CBD concentration is inferred from the front label.",
+  "ointmentPhotoSource": {
+    "file": "codex-clipboard-eb339e23-282d-4538-bf88-0e4690f903dd.png",
+    "sha256": "d202c7078d7e876e8e42225f963d0cc5edc0e66a0ebd84ef2435b6fbf9c79998",
+    "visibleLabel": [
+      "FOREST CLINIC",
+      "FORTE",
+      "KONOPNÁ MAST"
+    ],
+    "visiblePackage": "Round silver metal tin with a green, magenta and gold lid label.",
+    "priceListAlias": "CBD mast",
+    "studioAsset": "dist/assets/showroom/cbd-mast.webp",
+    "sourceFallbackAsset": "dist/assets/products/cbd-mast-source.webp"
+  },
   "queenBeeIncluded": false,
   "ointmentPendingDetails": [
-    "brand",
     "package size",
     "INCI/ingredients",
-    "label directions and warnings",
-    "source photo"
+    "CBD concentration",
+    "label directions and warnings"
   ]
 }

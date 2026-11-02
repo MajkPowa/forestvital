@@ -1,10 +1,10 @@
-# Forest Vital 1.2.0
+# Forest Vital 1.2.1
 
 A Czech, single-viewport product showroom for **www.forestvital.cz**, separate from Mijoli. The six current products share one fixed page: choosing a product changes its scene, name, palette, package visual, price and purchase ID. There is no vertical document scroll and no scroll-controlled product selection. A searchable collection, product information, saved products, cart and three-step demo checkout open in native dialogs with their own internal scrolling.
 
 **Primary address:** https://www.forestvital.cz/
 
-The custom domain is configured in GitHub Pages and Forpsi DNS. On 2 November 2026 at 19:06 CET, DNS and strict TLS validation passed for both `forestvital.cz` and `www.forestvital.cz`; the primary HTTPS page returned 200 and the HTTPS apex redirected to `www`. HTTPS enforcement is enabled in Pages. The [GitHub Pages deployment address](https://majkpowa.github.io/forestvital/?v=1.2.0) redirects to the custom domain. See [deployment verification, configuration and rollback](docs/custom-domain-deployment.md).
+The custom domain is configured in GitHub Pages and Forpsi DNS. On 2 November 2026 at 19:06 CET, DNS and strict TLS validation passed for both `forestvital.cz` and `www.forestvital.cz`; the primary HTTPS page returned 200 and the HTTPS apex redirected to `www`. HTTPS enforcement is enabled in Pages. The [GitHub Pages deployment address](https://majkpowa.github.io/forestvital/?v=1.2.1) redirects to the custom domain. See [deployment verification, configuration and rollback](docs/custom-domain-deployment.md).
 
 This is a functional design preview. It creates no real orders, takes no payments and sends no checkout details. Inventory is unknown; no availability claims are made. DNS is administered separately from the repository; publishing on the custom domain does not enable commerce integrations.
 
@@ -18,11 +18,11 @@ Both supplied reference recordings were examined in full: [496-frame cinematic r
 
 The supplied `FC produkty.docx` remains the source for descriptions, ingredients, dosage and warnings of the five capsule products. The newer `ceny FC.docx`, supplied on 2 November 2026, supersedes their prices and supplies the name and net price of the sixth product, **CBD mast**. Package counts for Paměť, CBD and Synbiotika use previously supplied catalog records. No count is asserted for Chlap or Oči. No testimonials, customer counts, certifications or business contacts are invented.
 
-The user explicitly postponed the ointment photograph. CBD mast therefore uses a clearly marked, original SVG missing-photo symbol rather than a generated or invented package. Its brand, package size, INCI/ingredients, label directions and warnings have not been supplied. The product copy identifies these gaps; it does not reuse capsule directions or assert a fictional formulation. No image generation was performed for this item.
+The user has now supplied the ointment photograph for 1.2.1. Its front label confirms **Forest Clinic**, **FORTE** and **KONOPNÁ MAST**, on a round silver metal tin. The catalog retains the price-list name **CBD mast** and records the full label identity as **Forest Clinic Konopná mast FORTE**. Package size, INCI/ingredients, CBD concentration, directions and warnings are not visible on this photograph and remain unspecified. The copy does not reuse capsule directions or assert a fictional formulation.
 
 ## Prices and VAT in 1.2.0
 
-The supplied price list contains **net unit prices**. Customer prices include VAT; each product also shows its net price and rate. The capsule products use 12% VAT. CBD mast is provisionally treated as a cosmetic topical product at 21%, rather than a registered medicinal product; its classification should be checked against the forthcoming product identity and label. Source values, document hash, rate references and the pending product fields are recorded in [pricing provenance](docs/pricing-source-2026-11-02.json).
+The supplied price list contains **net unit prices**. Customer prices include VAT; each product also shows its net price and rate. The capsule products use 12% VAT. CBD mast is provisionally treated as a cosmetic topical product at 21%, rather than a registered medicinal product; its classification should be checked against the full product label. The supplied front photograph confirms the brand and product wording but not this classification. Source values, document and photograph hashes, rate references and the pending product fields are recorded in [pricing provenance](docs/pricing-source-2026-11-02.json). No prices or tax calculations change in 1.2.1.
 
 | Product | Net unit price | VAT | Gross unit price |
 | --- | ---: | ---: | ---: |
@@ -38,6 +38,8 @@ Gross unit prices are rounded half-up to haléře, while the supplied net unit p
 ## Product media
 
 Five current **Higgsfield GPT Image 2.5** transparent package renders use the original user-supplied package photographs. The model preserves the label identity while improving lighting, edge clarity and materials. Assets are illustrative package renders rather than interactive 3D models. [Prompts, job IDs and the 16.5-credit quote](docs/product-image-generation.json) are retained, with source PNGs under `source-assets/higgsfield-products/` and optimized alpha WebP assets under `dist/assets/showroom/`. Original editorial photographs are retained as fallbacks.
+
+The ointment's separate Higgsfield GPT Image 2.5 studio image is based on its newly supplied real package photograph. Its display asset is `dist/assets/showroom/cbd-mast.webp`, with the source photograph at `dist/assets/products/cbd-mast-source.webp` as the fallback. The [exact prompt, job and 2.75-credit quote](docs/ointment-image-generation.json) are retained. The temporary missing-photo symbol from 1.2.0 is superseded; `imagePending` is false, while the missing label details remain pending. The release owner visually checked the label identity and complete silver tin. Current image and release checks are recorded in [QA 1.2.1](docs/release-1.2.1-qa.md).
 
 Queen Bee was removed from the offer in 1.1.1. Its photographs and the forest film/hero containing that package are no longer served from `dist/`; reversible archives are retained under `source-assets/retired-queen-bee/`. Historical media generation records and previous release analyses remain available. Existing saved/cart IDs are validated against the current catalog on load, removing the retired product while keeping other selections.
 
@@ -60,4 +62,4 @@ Open `http://localhost:4174/`. No framework install or build step is required. G
 
 ## Verification
 
-Current pricing, sixth-product and browser checks are recorded in [release 1.2.0 QA](docs/release-1.2.0-qa.md). Historical Queen Bee removal checks remain in [release 1.1.1 QA](docs/release-1.1.1-qa.md), with the broader implementation checks and their limits in [release 1.1.0 QA](docs/release-1.1.0-qa.md). Responsive browser checks do not substitute for physical-device or screen-reader testing. Proposed participant tasks and measurable acceptance criteria are included in the UI/UX analysis; no conversion improvement is claimed.
+Current ointment identity, image and release checks are recorded in [release 1.2.1 QA](docs/release-1.2.1-qa.md). Pricing, sixth-product and browser checks remain in [release 1.2.0 QA](docs/release-1.2.0-qa.md). Historical Queen Bee removal checks remain in [release 1.1.1 QA](docs/release-1.1.1-qa.md), with the broader implementation checks and their limits in [release 1.1.0 QA](docs/release-1.1.0-qa.md). Responsive browser checks do not substitute for physical-device or screen-reader testing. Proposed participant tasks and measurable acceptance criteria are included in the UI/UX analysis; no conversion improvement is claimed.

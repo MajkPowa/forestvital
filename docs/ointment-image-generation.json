@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-02",
+  "product_id": "cbd-mast",
+  "provider": "Higgsfield",
+  "model": "gpt_image_2_5",
+  "variant": "flare",
+  "quality": "high",
+  "resolution": "2k",
+  "background": "transparent",
+  "aspect_ratio": "4:5",
+  "quoted_credits": 2.75,
+  "job_id": "0d93ad07-80e0-4f48-b02b-2dd23c1cb7d3",
+  "input_media_id": "b977adc9-9bfb-4ec4-a597-141dea39e256",
+  "source": "source-assets/product-photos/cbd-mast-original.png",
+  "master": "source-assets/higgsfield-products/cbd-mast.png",
+  "asset": "dist/assets/showroom/cbd-mast.webp",
+  "fallback": "dist/assets/products/cbd-mast-source.webp",
+  "prompt": "Use case: precise-object-edit / product-mockup. Edit the supplied reference photo into a premium ecommerce studio packshot of this exact real product. Preserve the full round shallow silver aluminium screw-top tin, physical proportions, lid angle and depth, circular lid label layout, metallic gold border, textured deep emerald green field, magenta top band, gold cannabis leaf, white FOREST CLINIC name and circular white botanical logo, magenta FORTE badge and exact large gold Czech words KONOPNÁ MAST with their accents. The reference is the edit target, not permission to redesign the package. Keep every visible label element faithful and legible, no invented weight, volume, CBD concentration, ingredients or extra label text. Improve photographic sharpness, edge clarity, realistic brushed-metal surfaces and subtle premium softbox reflections. Remove uneven exposure, compression noise and the original white background. One closed tin only, three-quarter view from above as in the reference, full lid and entire base fully visible, centered. 85mm commercial product-photography appearance. Soft key light from upper left, restrained rim highlight, natural color accuracy, not exaggerated gloss. Portrait 4:5 canvas to match the existing website cutouts; the wide tin occupies about 82 percent of canvas width with clear padding all around and remains physically proportionate. A real transparent alpha background, no white or checkerboard backdrop, no floor, no pedestal, no scenery, no loose cream, no other products, no added props or text, no large baked cast shadow. Preserve the real label and brand identity while improving only the photographic presentation.",
+  "preserved": [
+    "Forest Clinic name and botanical logo",
+    "FORTE",
+    "KONOPNÁ MAST",
+    "silver round screw-top tin",
+    "magenta band, green field, gold border and cannabis leaf"
+  ],
+  "not_inferred": [
+    "weight or volume",
+    "INCI/ingredients",
+    "CBD concentration",
+    "directions from unseen label"
+  ],
+  "validation": {
+    "imageSize": [
+      1792,
+      2240
+    ],
+    "mode": "RGBA",
+    "alphaExtrema": [
+      0,
+      254
+    ],
+    "identityReviewed": true,
+    "browserReview": "passed: desktop 1422x800, mobile 390x844 and 320x568 CSS px; full tin visible, no document overflow, source identity preserved on warm background; catalog and cart load new WebP; missing-photo note hidden; no console errors",
+    "published": "pending"
+  }
+}

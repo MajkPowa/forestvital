@@ -1,4 +1,4 @@
-/* Forest Vital 1.2.0 — one viewport, six product worlds with clear VAT prices. */
+/* Forest Vital 1.2.1 — one viewport, six product worlds with clear VAT prices. */
 (() => {
   'use strict';
   const root = document.getElementById('showroom-root');
